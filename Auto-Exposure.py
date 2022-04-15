@@ -1,0 +1,4 @@
+c.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0)
+c.set(cv2.CAP_PROP_EXPOSURE, -2.0)
+
+print(c.get(cv2.CAP_PROP_AUTO_EXPOSURE))
