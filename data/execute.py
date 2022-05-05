@@ -77,6 +77,7 @@ def ffResponse():
 
 
 def ffQuestion():
+    cv2.destroyAllWindows()
     talk('is there anything else you are looking for?')
     ff = takeCommand()
     if 'yes' in ff:
@@ -122,10 +123,10 @@ while True:
                         cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 255), 1)
             cv2.putText(img, str(round(confidence * 100)) + "%", (box[0] + 200, box[1] + 30),
                         cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 1)
+            if idef() == className[classId - 1]:
+                talk('I found a' + idef())
+                ffQuestion()
 
-    if idef() == className[classId - 1]:
-        talk('I found a' + idef())
-        break
     # detectObject()
 
     cTime = time.time()
